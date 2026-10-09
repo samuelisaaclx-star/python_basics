@@ -1,0 +1,48 @@
+print("Welcome to Chaulin, the Pilot Hunter!")
+
+pilot_name = input("Enter the pilot's name: ")
+
+print("\nChoose the mission difficulty:")
+print("1 - Easy")
+print("2 - Medium")
+print("3 - Hard")
+
+mission_difficulty = int(input("Choose the difficulty (1-3): "))
+
+while mission_difficulty not in [1, 2, 3]:
+    print("Invalid option! Please choose 1, 2, or 3.")
+    mission_difficulty = int(input("Choose the difficulty (1-3): "))
+
+match mission_difficulty:
+    case 1:
+        difficulty_name = "Easy"
+    case 2:
+        difficulty_name = "Medium"
+    case 3:
+        difficulty_name = "Hard"
+
+print(f"Mission difficulty: {difficulty_name}")
+
+energy = int(input("Enter the ship's energy level: "))
+
+initial_energy = energy
+shots_fired = 0
+
+print("\n--- ENERGY SYSTEM ---")
+
+while energy > 0:
+    print(f"Remaining energy: {energy}")
+    energy -= 10
+
+print("\n--- WEAPONS SYSTEM ---")
+
+for shot in range(1, 4):
+    print(f"Shot number {shot} fired!")
+    shots_fired += 1
+
+print("\n--- FINAL MISSION REPORT ---")
+print(f"Pilot name: {pilot_name}")
+print(f"Mission difficulty: {difficulty_name}")
+print(f"Initial energy: {initial_energy}")
+print(f"Shots fired: {shots_fired}")
+print("Mission completed!")

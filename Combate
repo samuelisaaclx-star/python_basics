@@ -1,0 +1,55 @@
+print("Welcome to Arrogantchi RPG! Let's start by configuring your character.")
+
+character_name = input("Enter your character's name: ")
+
+character_class = input("Type your Character Class (Mage, Warrior, Archer): ")
+
+while character_class not in ["Mage", "Warrior", "Archer"]:
+    print("Invalid option! Please choose a valid class.")
+    character_class = input("Type your Character Class (Mage, Warrior, Archer): ")
+
+match character_class:
+    case "Mage":
+        print("Selected Class: Mage")
+
+    case "Warrior":
+        print("Selected Class: Warrior")
+
+    case "Archer":
+        print("Selected Class: Archer")
+
+
+strength = int(input("Enter your strength: "))
+
+defense = int(input("Enter your defense: "))
+
+attack = int(input("Enter your attack: "))
+
+
+initial_points = 50
+
+winning_points = int(input("Enter the amount of points earned: "))
+
+total_points = initial_points + winning_points
+
+
+life = 100
+
+damage_taken = int(input("Enter the amount of damage taken: "))
+
+remaining_life = life - damage_taken
+
+
+total_attack = attack * 2
+
+
+players = int(input("How many players will share the amount?: "))
+
+coins = 5000 // players
+
+
+print(f"Name: {character_name} | Class: {character_class}\n"
+      f"Attributes - Strength: {strength}, Defense: {defense}, Attack: {attack}\n"
+      f"Points earned: {total_points} | Remaining life: {remaining_life}\n"
+      f"Total attack: {total_attack}\n"
+      f"Coins distributed between players: {coins}")
