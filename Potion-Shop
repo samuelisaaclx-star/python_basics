@@ -1,0 +1,31 @@
+print("=== MR. ZÉ'S POTION SHOP ===")
+
+character_name = input("Enter your character's name: ")
+
+print()
+print("Maximum price per potion: €10")
+print()
+
+potion_price = 10
+quantity = int(input("How many potions do you want to buy? "))
+
+def calculate_total(price, quantity):
+    return price * quantity
+
+total_cost = calculate_total(potion_price, quantity)
+
+print()
+print("=== PURCHASE REPORT ===")
+print(f"Player: {character_name}")
+print(f"Potions purchased: {quantity}")
+print(f"Total potions sold: {quantity}")
+print(f"Price per potion: €{potion_price}")
+print(f"Total amount paid: €{total_cost}")
+
+if quantity > 5:
+    print("Bonus: You are a loyal customer!")
+else:
+    print("Thank you for shopping with us!")
+
+print()
+print("Come back soon!")
